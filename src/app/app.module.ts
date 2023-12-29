@@ -8,8 +8,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
 
+import { TableBasicExample } from './tablebasicexample/table-basic-example';
+import { TableSortingExample } from './table-sorting-example/table-sorting-example';
+
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TableBasicExample, TableSortingExample],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
@@ -19,6 +23,6 @@ import { HttpClientModule } from '@angular/common/http';
     MaterialExampleModule,
     ReactiveFormsModule,
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent, TableBasicExample, TableSortingExample],
 })
 export class AppModule { }

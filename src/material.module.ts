@@ -46,9 +46,11 @@ import { MatTreeModule } from '@angular/material/tree';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { CdkMenuModule } from '@angular/cdk/menu';
 import { DialogModule } from '@angular/cdk/dialog';
+import { CommonModule } from '@angular/common'; //Necesario para el NgFor
 
 @NgModule({
     exports: [
+        CommonModule, //para el ngfor
         A11yModule,
         CdkAccordionModule,
         ClipboardModule,
