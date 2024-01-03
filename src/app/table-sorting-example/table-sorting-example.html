@@ -35,10 +35,12 @@
  -->
 
 <h2>Material Tabla Sort con mat-table</h2>
+<!-- 1: Comience agregando el componente <table mat-table> a su plantilla y pasando datos. -->
 <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
     class="mat-elevation-z8">
 
     <!-- Position Column -->
+    <!-- 2: Cada definición de columna matColumnDef debe recibir un nombre único y contener el contenido de su encabezado y celdas de fila. -->
     <ng-container matColumnDef="position">
         <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
             No.
@@ -47,6 +49,7 @@
     </ng-container>
 
     <!-- Name Column -->
+    
     <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
             Name
@@ -70,6 +73,16 @@
         <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
     </ng-container>
 
+    <!-- Finalmente, una vez que haya definido sus columnas, debe indicarle a la tabla qué columnas se representarán en el encabezado y en las filas de datos. -->
+    <!-- Agregue mat-header-row y mat-row al contenido de su mat-table y proporcione su lista de columnas como entradas -->
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    
+
 </table>
+<!-- Paginator va afuera de la etiqueta table -->
+<mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+</mat-paginator>

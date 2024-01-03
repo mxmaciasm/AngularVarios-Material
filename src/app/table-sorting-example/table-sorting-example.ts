@@ -3,6 +3,7 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 // import { MatSortModule } from '@angular/material/sort';
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 
 export interface PeriodicElement {
   name: string;
@@ -57,12 +58,15 @@ export class TableSortingExample implements AfterViewInit {
     this.sortedData = this.desserts.slice();
   }
   @ViewChild(MatSort) sort!: MatSort; //MatSort: Directiva para MatSortables para gestionar el estado de clasificación y proporcionar parámetros de clasificación predeterminados.
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   // @ViewChild Es posible que existan situaciones en las que desee acceder a una directiva, componente secundario o elemento DOM de una clase principal de componentes. 
   // El decorador ViewChild devuelve el primer elemento que coincide con una directiva, un componente o un selector de referencia de plantillas concreto.
 
   ngAfterViewInit() { //ngAfterViewInit es aquí cuando los componentes y directivas secundarios están disponibles.
+    
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 
   /** Announce the change in sort state for assistive technology. */
