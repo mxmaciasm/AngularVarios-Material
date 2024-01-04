@@ -1,0 +1,38 @@
+<h2>Material Select</h2>
+<h4>Basic mat-select</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Favorite food</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{food.viewValue}}
+    </mat-option>
+  </mat-select>
+
+  <!-- con la version angular 17 (nov 2023) hay un nuevo control @for que reemplaza las ngFor ngif .... 
+    Se habilita en el tsconfig.json
+    {
+        "angularCompilerOptions": {
+            ....
+            "_enabledBlockTypes": [
+            "if", "switch", "for"
+            ]
+        }
+    }
+  <mat-select>
+  @for (food of foods; track food) {
+    <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+  }
+  </mat-select>
+-->
+</mat-form-field>
+
+<h4>Basic native select</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Cars</mat-label>
+  <select matNativeControl required>
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </select>
+</mat-form-field>

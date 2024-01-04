@@ -11,9 +11,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { TableBasicExample } from './tablebasicexample/table-basic-example';
 import { TableSortingExample } from './table-sorting-example/table-sorting-example';
 
+import {SelectexampleComponent} from './selectexample/selectexample.component';
+import {SelectGroupOptionsComponent} from './select-group-options/select-group-options.component';
 
 @NgModule({
-  declarations: [AppComponent, TableBasicExample, TableSortingExample],
+  declarations: [AppComponent, TableBasicExample, TableSortingExample, SelectexampleComponent,SelectGroupOptionsComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
@@ -23,6 +25,6 @@ import { TableSortingExample } from './table-sorting-example/table-sorting-examp
     MaterialExampleModule,
     ReactiveFormsModule,
   ],
-  bootstrap: [AppComponent, TableBasicExample, TableSortingExample],
+  bootstrap: [AppComponent, TableBasicExample, TableSortingExample, SelectexampleComponent,SelectGroupOptionsComponent],
 })
 export class AppModule { }
