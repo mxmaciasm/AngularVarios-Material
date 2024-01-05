@@ -1,9 +1,23 @@
 <h2>Material Autocompletado</h2>
 <form class="example-form">
   <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Number</mat-label>
+    <mat-label>Number1</mat-label>
+    <!-- Setear la propiedad matAutocomplete en input para referenciar a mat-autocomplete. 
+      Usamos la directiva formControl de ReactiveFormsModule para rastrear el valor de la entrada 
+    
+      Ahora necesitaremos vincular la entrada de texto a su panel. 
+      Podemos hacer esto exportando la instancia del panel de autocompletar a una variable de plantilla local
+      (aquí la llamamos "auto") y vinculando esa variable a la propiedad matAutocomplete de la entrada
+    
+      placeholder="Pick one" -> se muestra para indicar que seleccione una
+    -->
     <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
       [matAutocomplete]="auto">
+    <!-- Comience creando el panel de autocompletar y las opciones que se muestran en su interior. 
+        Cada opción debe estar definida por una etiqueta mat-option. 
+        
+        Establezca la propiedad de valor de cada opción en el valor que desee que sea el valor de 
+        la entrada de texto cuando se seleccione esa opción. -->
     <mat-autocomplete #auto="matAutocomplete">
       <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
         {{option}}

@@ -41,6 +41,11 @@ export class TableBasicExample {
     this.sortedData = this.dataSource.slice();
   }
 
+  onSelect(): void {
+    this.sortedData = this.dataSource.filter(item => { // Assuming ELEMENT_DATA is an array of objects with tipoParametro property
+      return item.name.toUpperCase() === "Oxygen".toUpperCase(); // filterData now contains only the elements that satisfy the condition
+    });
+    this.dataSource = this.sortedData;
 
-
+  }
 }
