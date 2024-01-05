@@ -13,9 +13,10 @@ import { TableSortingExample } from './table-sorting-example/table-sorting-examp
 
 import {SelectexampleComponent} from './selectexample/selectexample.component';
 import {SelectGroupOptionsComponent} from './select-group-options/select-group-options.component';
+import {TableFilterComponent} from './table-filter/table-filter.component'
 
 @NgModule({
-  declarations: [AppComponent, TableBasicExample, TableSortingExample, SelectexampleComponent,SelectGroupOptionsComponent],
+  declarations: [AppComponent, TableBasicExample, TableSortingExample, SelectexampleComponent,SelectGroupOptionsComponent, TableFilterComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
@@ -25,6 +26,6 @@ import {SelectGroupOptionsComponent} from './select-group-options/select-group-o
     MaterialExampleModule,
     ReactiveFormsModule,
   ],
-  bootstrap: [AppComponent, TableBasicExample, TableSortingExample, SelectexampleComponent,SelectGroupOptionsComponent],
+  bootstrap: [AppComponent, TableBasicExample, TableSortingExample, SelectexampleComponent,SelectGroupOptionsComponent, TableFilterComponent],
 })
 export class AppModule { }

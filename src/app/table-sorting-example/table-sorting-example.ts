@@ -35,8 +35,8 @@ export interface Dessert {
 
 @Component({
   selector: 'table-sorting-example',
-  styleUrls: ['table-sorting-example.css'],
-  templateUrl: 'table-sorting-example.html',
+  // styleUrls: ['table-sorting-example.css'],
+  templateUrl: './table-sorting-example.html',
   // standalone: true,
   // imports: [MatTableModule, MatSortModule, CommonModule], //error NG2010: 'imports' is only valid on a component that is standalone. Por tal motivo lo importe n material.module.ts y no desde aqui.
 })
