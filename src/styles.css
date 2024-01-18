@@ -1,4 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Adding a Pre-built Angular Material Theme
+When we install Angular Material few pre-built themes are being installed automatically.
+ Available pre-built themes are 1. indigo-pink 2. deeppurple-amber 3. purple-green 4. pink-bluegrey 
+ Esto cambió tipo de letra y otros
+ */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

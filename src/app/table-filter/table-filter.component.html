@@ -1,19 +1,18 @@
 <h1>Angular mat-table filter</h1>
 <mat-card>
   For the complete tutorial please go through
-  <a href="https://www.angularjswiki.com/material/mat-table-filter/"
-    >https://www.angularjswiki.com/material/mat-table-filter/</a
-  >
+  <a
+    href="https://www.angularjswiki.com/material/mat-table-filter/">https://www.angularjswiki.com/material/mat-table-filter/</a>
 </mat-card>
+
+
 <h2>mat-table filter using search box</h2>
+<!-- <mat-form-field> and matInput vienen en MatInputModule -->
 <mat-form-field class="full-width">
+  <!-- mat-label Es el nombre de la etiqueta, lo coloca dentro del textbox -->
   <mat-label>Filter</mat-label>
-  <input
-    matInput
-    (keyup)="applyFilter($event)"
-    placeholder="Search Columns"
-    #input
-  />
+  <!-- con el evento keyup seguimos la entrada del usuario y lo pasamos al archivo ts -->
+  <input matInput (keyup)="applyFilter($event)" placeholder="Search Columns" #input />
 </mat-form-field>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
@@ -26,13 +25,11 @@
 </table>
 
 <h2>mat-table filter by multiple columns</h2>
-
+<!-- ngFor display the filters in the component html file, above the mat-table -->
+<!-- empFilters es de tipo EmpFilter, ngFor crear tres fields con label y select con sus opciones. el evento lo tiene en select -->
 <mat-form-field appearance="fill" *ngFor="let empfilter of empFilters">
   <mat-label>{{ empfilter.name }}</mat-label>
-  <mat-select
-    [(value)]="empfilter.defaultValue"
-    (selectionChange)="applyEmpFilter($event, empfilter)"
-  >
+  <mat-select [(value)]="empfilter.defaultValue" (selectionChange)="applyEmpFilter($event, empfilter)">
     <mat-option *ngFor="let op of empfilter.options" [value]="op">
       {{ op }}
     </mat-option>

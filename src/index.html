@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
 
 <head>
@@ -7,7 +8,7 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <!-- 
 ng v
@@ -20,11 +21,41 @@ Angular: 15.2.10
 
 Luego revisar https://v15.material.angular.io/ y la version Angular que aplica
 
+Latest Angular Material Module depend upon Angular CDK,Angular Core and Angular Common modules.
+So its always better to install these three modules together.
+npm install @angular/material @angular/cdk @angular/core @angular/common
+And further @angular/core has a dependency on reactive js and zone.js modules. Install both modules using below command
+npm install rxjs zone.js
 -->
 
 
 
 <body class="mat-typography mat-app-background">
+  <div id="material-example">
+
+    <h1>ToolBar</h1>
+
+    <mat-toolbar color="primary">
+
+      <span>Material Design Rocks!</span>
+
+    </mat-toolbar>
+
+    <br />
+
+    <h1>Buttons</h1>
+
+    <mat-card>
+
+      <button mat-button>Basic</button>
+      <button mat-raised-button>Raised</button>
+      <button mat-icon-button><mat-icon>favorite</mat-icon></button>
+      <button mat-fab>Fab</button>
+      <button mat-mini-fab>mFab</button>
+
+    </mat-card>
+
+  </div>
   <div>
     <app-root></app-root>
     <table-basic-example></table-basic-example>
