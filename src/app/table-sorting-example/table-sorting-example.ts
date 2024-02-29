@@ -3,7 +3,7 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 // import { MatSortModule } from '@angular/material/sort';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 
 export interface PeriodicElement {
   name: string;
@@ -64,7 +64,7 @@ export class TableSortingExample implements AfterViewInit {
   // El decorador ViewChild devuelve el primer elemento que coincide con una directiva, un componente o un selector de referencia de plantillas concreto.
 
   ngAfterViewInit() { //ngAfterViewInit es aquí cuando los componentes y directivas secundarios están disponibles.
-    
+
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
